@@ -3640,9 +3640,9 @@ async function ensurePdfBrandAssets() {
   if (_pdfBrandAssets.loaded) return _pdfBrandAssets;
   try {
     const [logo, picto] = await Promise.all([
-      loadImageAsDataURL(['./assets/logo-codex.jpg', './logo-codex.jpg']),
-      loadImageAsDataURL(['./assets/picto-codex.jpg', './picto-codex.jpg', './assets/logo-codex.jpg', './logo-codex.jpg'])
-    ]);
+  loadImageAsDataURL(['./logo-codex.jpg']),
+  loadImageAsDataURL(['./picto-codex.jpg'])
+]);
     _pdfBrandAssets.logo = logo;
     _pdfBrandAssets.picto = picto;
   } catch (e) {
