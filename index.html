@@ -3688,8 +3688,7 @@ function pdfPageHeader(doc, pageTitle, subtitle, pageNo) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(11);
   pdfSetText(doc, theme.navy);
-  doc.text('QualPack by CODEX EXPERTISE', centerX, 17, { align: 'center' });
-
+  doc.text('QualPack by CODEX EXPERTISE', 17,
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(15);
   pdfSetText(doc, theme.text);
