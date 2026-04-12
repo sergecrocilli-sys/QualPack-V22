@@ -3680,9 +3680,9 @@ function pdfPageHeader(doc, pageTitle, subtitle, pageNo) {
 
   const centerX = 105;
   if (pageNo === 1 && assets.logo) {
-    try { doc.addImage(assets.logo, 'JPEG', 76, 7, 58, 15); } catch (e) { console.warn('Logo PDF non ajouté', e); }
+    try { doc.addImage(assets.logo, 'JPEG', 14, 7, 58, 15); } catch (e) { console.warn('Logo PDF non ajouté', e); }
   } else if (assets.picto) {
-    try { doc.addImage(assets.picto, 'JPEG', 98, 7, 14, 14); } catch (e) { console.warn('Picto PDF non ajouté', e); }
+    try { doc.addImage(assets.picto, 'JPEG', 14, 7, 14, 14); } catch (e) { console.warn('Picto PDF non ajouté', e); }
   }
 
   doc.setFont('helvetica', 'bold');
