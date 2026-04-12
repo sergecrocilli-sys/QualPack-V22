@@ -96,7 +96,6 @@ async function syncDetecteur(record) {
     op: record.op || null,
     of: record.of || null,
     ligne_prod: record.ligne_prod || record.ligne || null,
-    ligne: record.ligne || record.ligne_prod || null,
     type: record.testType || record.type || null,
     now: record.date || record.now || null,
     vf: record.vF || record.vf || null,
