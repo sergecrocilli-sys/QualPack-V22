@@ -68,7 +68,6 @@ async function syncPesee(record) {
       of: record.of || null,
       op: record.op || null,
       date: record.date || null,
-      ligne_prod: record.ligne_prod || record.ligne || null,
       moy: (record.moy !== '' && record.moy != null) ? Number(record.moy) : null,
       et: (record.et !== '' && record.et != null) ? Number(record.et) : null,
       tu1: record.tu1 != null ? Number(record.tu1) : null,
