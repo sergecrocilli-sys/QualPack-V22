@@ -42,8 +42,8 @@ function loadScript(local, cdn) {
   });
 }
 window._libsReady = Promise.all([
-  loadScript(['./libs/jspdf.umd.min.js', './jspdf.umd.min.js'], 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'),
-  loadScript(['./libs/xlsx.full.min.js', './xlsx.full.min.js'], 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js')
+  loadScript(['./jspdf.umd.min.js', './jspdf.umd.min.js'], 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'),
+  loadScript(['./xlsx.full.min.js', './xlsx.full.min.js'], 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js')
 ]);
 </script>
   <title>QualPack</title>
