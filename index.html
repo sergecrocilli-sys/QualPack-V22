@@ -3675,33 +3675,53 @@ function pdfPageHeader(doc, pageTitle, subtitle, pageNo) {
   const theme = pdfV2Theme();
   const assets = _pdfBrandAssets;
 
+  // Fond du header
   pdfSetFill(doc, theme.white);
-  doc.rect(0, 0, 210, 36, 'F');
+  doc.rect(0, 0, 210, 42, 'F');
 
-  const centerX = 105;
+  // Branding gauche
   if (pageNo === 1 && assets.logo) {
-    try { doc.addImage(assets.logo, 'JPEG', 14, 7, 58, 15); } catch (e) { console.warn('Logo PDF non ajouté', e); }
+    try {
+      doc.addImage(assets.logo, 'JPEG', 14, 6, 52, 14);
+    } catch (e) {
+      console.warn('Logo PDF non ajouté', e);
+    }
   } else if (assets.picto) {
-    try { doc.addImage(assets.picto, 'JPEG', 14, 7, 14, 14); } catch (e) { console.warn('Picto PDF non ajouté', e); }
+    try {
+      doc.addImage(assets.picto, 'JPEG', 14, 6, 12, 12);
+    } catch (e) {
+      console.warn('Picto PDF non ajouté', e);
+    }
   }
 
+  // QUALPACK (titre principal)
   doc.setFont('helvetica', 'bold');
-  doc.setFontSize(11);
+  doc.setFontSize(16);
   pdfSetText(doc, theme.navy);
-  doc.text('QualPack by CODEX EXPERTISE', 17,
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(15);
-  pdfSetText(doc, theme.text);
-  doc.text(subtitle || '', 14, 29);
+  doc.text('QUALPACK', 14, 24);
 
+  // Sous-titre métier
   doc.setFont('helvetica', 'normal');
-  doc.setFontSize(9);
+  doc.setFontSize(9.5);
   pdfSetText(doc, theme.muted);
-  doc.text(pageTitle || '', 196, 17, { align: 'right' });
+  doc.text('Rapport de suivi qualité & traçabilité', 14, 29.5);
 
+  // Pagination à droite
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(10);
+  pdfSetText(doc, theme.text);
+  doc.text(pageTitle || '', 196, 16, { align: 'right' });
+
+  // Sous-titre de page (Synthèse, Activité, etc.)
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(13);
+  pdfSetText(doc, theme.text);
+  doc.text(subtitle || '', 14, 38);
+
+  // Ligne de séparation
   pdfSetDraw(doc, theme.borderStrong);
-  doc.setLineWidth(0.4);
-  doc.line(14, 33.5, 196, 33.5);
+  doc.setLineWidth(0.5);
+  doc.line(14, 40.5, 196, 40.5);
 }
 
 function pdfSectionTitle(doc, y, title) {
