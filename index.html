@@ -2148,6 +2148,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loadFromDB().then(() => {
     if (document.getElementById('screen-historique').classList.contains('active')) {
       renderHist();
+    if (document.getElementById('screen-dashboard').classList.contains('active')) {
+    renderDashboard();
     }
   });
 });
@@ -3239,9 +3241,8 @@ function populateDashFilters() {
   const prodSel = document.getElementById('dash-filter-product');
   if (!clientSel || !prodSel) return;
 
-  const clients = [...new Set(sessions.map(s => s.cli).filter(Boolean))].sort();
-  clientSel.innerHTML = '<option value="">Tous les clients</option>' + clients.map(c => `<option value="${c}">${c}</option>`).join('');
-  clientSel.value = dashFilters.client || '';
+  const allSources = [...sessions, ...dets];
+const clients = [...new Set(allSources.map(s => s.cli).filter(Boolean))].sort();
 
   let prods = sessions;
   if (dashFilters.client) prods = prods.filter(s => s.cli === dashFilters.client);
