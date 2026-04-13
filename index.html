@@ -5071,7 +5071,7 @@ async function generatePDFV2() {
 
     // Page 1
     pdfPageHeader(doc, 'Page 1/3', 'Synthèse', 1);
-    let y = 38;
+    let y = 44;
 
     pdfCard(doc, 14, y, 182, 16, theme.bgSoft, theme.border, 3);
     doc.setFont('helvetica', 'normal');
@@ -5190,7 +5190,7 @@ async function generatePDFV2() {
     // Page 2
     doc.addPage();
     pdfPageHeader(doc, 'Page 2/3', 'Activité & traçabilité', 2);
-    y = 38;
+    y = 44;
     pdfCard(doc, 14, y, 182, 12, theme.bgSoft, theme.border, 3);
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(8.5);
@@ -5216,7 +5216,7 @@ async function generatePDFV2() {
     // Page 3
     doc.addPage();
     pdfPageHeader(doc, 'Page 3/3', 'Alertes & analyse', 3);
-    y = 38;
+    y = 44;
 
     pdfSetFill(doc, globalStatusColor);
     doc.roundedRect(14, y, 182, 20, 3, 3, 'F');
