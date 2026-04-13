@@ -5181,8 +5181,6 @@ async function generatePDFV2() {
     const summaryLines = [
       `TU1 : ${data.stats.tu1}   TU2 : ${data.stats.tu2}`,
       `Détecteur NOK : ${data.stats.dErr}`,
-      data.status?.title || 'Statut calculé automatiquement',
-      data.status?.subtitle || 'Lecture immédiate de la période sélectionnée'
     ];
     doc.text(summaryLines, 18, y + 16);
     pdfDrawFooter(doc, 1);
