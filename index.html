@@ -3682,7 +3682,7 @@ function pdfPageHeader(doc, pageTitle, subtitle, pageNo) {
   // Branding gauche
   if (pageNo === 1 && assets.logo) {
     try {
-      doc.addImage(assets.logo, 'JPEG', 14, 6, 52, 14);
+      doc.addImage(assets.logo, 'JPEG', 14, 8, 38, 10);
     } catch (e) {
       console.warn('Logo PDF non ajouté', e);
     }
